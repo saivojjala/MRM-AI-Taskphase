@@ -143,7 +143,7 @@ class mybot:
 
     def linear(self):
         pub = rospy.Publisher("/cmd_vel", Twist, queue_size=10)
-        rate = rospy.Rate(1000000)
+        rate = rospy.Rate(10)
         velocity = Twist()
 
         while self.distance > 0.8:
