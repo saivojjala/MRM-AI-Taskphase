@@ -31,8 +31,8 @@ class autonomous:
         self.gps = 0
         self.gps_latitude = 0
         self.gps_longitude = 0
-        self.lat_final = 49.9000721975
-        self.lng_final =  8.9001120363
+        self.lat_final = 49.9000373192
+        self.lng_final = 8.90005363405
         self.imu = 0
         self.yaw_initial = 0
         self.fw_azimuth = 0
