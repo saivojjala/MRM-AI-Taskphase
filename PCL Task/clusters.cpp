@@ -29,7 +29,7 @@ void clusters_cb(const sensor_msgs::PointCloud2ConstPtr& input)
     // Convert to the templated PointCloud
     pcl::fromROSMsg (*input, *cloud_blob);
 
-    // Create the filtering object: downsample the dataset using a leaf size of 1cm
+    // Create the filtering object: downsample the dataset using a leaf size of 1.5cm
     pcl::VoxelGrid<pcl::PointXYZRGB> sor;
     sor.setInputCloud (cloud_blob);
     sor.setLeafSize (0.015f, 0.015f, 0.015f);
@@ -51,7 +51,7 @@ void clusters_cb(const sensor_msgs::PointCloud2ConstPtr& input)
     pcl::ExtractIndices<pcl::PointXYZRGB> extract;
 
     int i = 0, nr_points = (int) cloud_filtered->size ();
-    // While 30% of the original cloud is still there
+    
     while (cloud_filtered->size () > 0.7 * nr_points)
     {
         // Segment the largest planar component from the remaining cloud
